@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{# Déclaration d'une variable Twig #}
+{% set myVar = "My Data" %}
+{% set mySecondVar = "My new data" %}
+{% set htmlTags = "Bonsoir" %}
+{% set myObj = { 'key': 'value', 'key2': 'value 2' } %}
+
+{% block title %}Hello HomepageController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Books Store</h1>
+    <div class="row">
+        <div class="col-3">
+            Sidebar
+        </div>
+        <div class="col-9">
+            Content panel <br>
+
+            {{ mySecondVar }} <br><br>
+
+            {# Boucle FOR #}
+
+            {% for key, value in myObj %}
+                {{loop.index}} : {{ key }} - {{value}}<br>
+            {% endfor %}
+
+            {% for value in myObj %}
+            {{loop.index0}} :{{value}}<br>
+        {% endfor %}
+
+        {% for i in 0..10 %}
+            I vaut {{ i }}
+        {% endfor %}
+
+        {# Pipe raw (rendre HTML) #}
+        {{ htmlTags | raw}} <br>
+        {{ htmlTags }} <br>
+        <br>
+
+        {# Condition #}
+        {% if true %}
+            Ma condition est vrai
+        {% endif %}
+        
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}
