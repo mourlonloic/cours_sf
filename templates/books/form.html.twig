@@ -1,0 +1,31 @@
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+
+    <div class="form-groupe row">
+        {{ form_label(form.title) }}
+        <div class="col-8">
+            {{ form_errors(form.title) }}
+            {{ form_widget(form.title) }}
+            {{ form_help(form.title) }}
+        </div>
+    </div>
+
+    <div class="form-groupe row">
+        {{ form_label(form.description) }}
+        <div class="col-8">
+            {{ form_errors(form.description) }}
+            {{ form_widget(form.description) }}
+            {{ form_help(form.description) }}
+        </div>
+    </div>
+
+    <div class="form-groupe row">
+        {{ form_label(form.price) }}
+        <div class="col-8">
+            {{ form_errors(form.price) }}
+            {{ form_widget(form.price) }}
+            {{ form_help(form.price) }}
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-xs btn-success">Ajouter un livre</button>
+{{ form_end(form) }}
